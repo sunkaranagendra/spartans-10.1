@@ -1,0 +1,53 @@
+How to generate all the possible subsets of a set ?
+
+#include<stdio.h>
+#include<math.h>
+int
+main ()
+{
+  char s[1000];
+  int len, i, j;
+  scanf ("%[^\n]s", s);
+  for (i = 0; s[i] != '\0'; i++);
+  len = i;
+  for (i = 0; i < pow (2, len); i++)
+    {
+      for (j = 0; j < len; j++)
+	{
+	  if (i & (1 << j))
+	    {
+	      printf ("%c", s[j]);
+	    }
+	}
+      printf ("\n");
+
+    }
+
+  return 0;
+}
+
+2.Find the largest power of 2 (most significant bit in binary form), which is less than or equal to the given number N.
+
+#include<stdio.h>
+#include<math.h>
+int main ()
+{
+int n,a[100],i=0,j,k;
+scanf("%d",&n);
+while(n!=0)
+{
+    a[i]=n%2;
+    i++;
+    n=n/2;
+}
+for(j=i-1;j>=0;j--)
+{
+    if(a[j]==1)
+    {
+        k=pow(2,j);
+        printf("%d",k);
+        break;
+    }
+}
+  return 0;
+}
