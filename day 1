@@ -1,0 +1,60 @@
+1.How to check if a given number is a power of 2 ?
+
+#include <stdio.h>
+
+int
+main ()
+{
+  //printf("Hello World");
+  int  n,x=2,c=0;
+  scanf ("%d", &n);
+  while(n>=x)
+  {
+      if(n%x==0&&n/x==1)
+      {
+      printf("power of  2");
+      c+=1;
+      break;
+      }
+      x=x*2;
+      
+  }
+  if(c==0)
+  printf("not a power of 2");
+  return 0;
+}
+
+2.Count the number of ones in the binary representation of the given number.
+int main ()
+{
+  //printf("Hello World");
+  int  n,r,c=0;
+  scanf ("%d", &n);
+  while(n!=0)
+  {
+      r=n%10;
+      if(r==1)
+      c++;
+      n=n/10;
+  }
+  printf("%d",c);
+  return 0;
+}
+3.Check if the i th bit is set in the binary form of the given number.
+#include<stdio.h>
+int main ()
+{
+  //printf("Hello World");
+  int  n,k,p;
+  scanf ("%d", &n);
+  scanf("%d",&k);
+  p=1<<(k-1);
+
+  if((p&n)==p)
+  printf("SET");
+  else
+  printf("not set");
+  
+  
+  return 0;
+}
