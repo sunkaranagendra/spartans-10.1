@@ -1,0 +1,44 @@
+Divide an integer without using / operator
+n=int(input())
+k=int(input())
+quo=0
+while(n>=k):
+    n=n-k
+    quo+=1
+print(quo)
+    
+Find the MSB of the number in O(1)
+#way-1:
+# in this program i am going to do find the msb of a bit,a number is may be a 4 bit or 8 bit.
+#based on that i am checking that whether the msb is 1 or 0
+'''
+n=int(input())
+if(n>15):
+    k=n&128
+    if(k==128):
+        print("1")
+    else:
+        print("0")
+else:
+    k=n&8
+    if(k==8):
+        print("1")
+    else:
+        print("0")
+        '''
+        
+#way 2-
+#finding the msb equivalent power of 2 value value
+n=int(input())
+count=0
+l=n
+while(n!=0):
+    count+=1
+    n=n//2
+i=1
+# print(count)
+k=i<<(count-1)
+# print(k)
+print(l&k)
+        
+
