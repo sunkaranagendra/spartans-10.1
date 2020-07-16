@@ -1,0 +1,44 @@
+Have you heard of russian peasant algorithm? No, it's okay. Just think of how will you be able to multiply two numbers using bitwise operations. Yeah, you can't use this "*" operator to multiply. 
+#include <stdio.h>
+
+int main()
+{
+   // printf("Hello World");
+   int a,b,res=0;
+   scanf("%d %d",&a,&b);
+   while(b>0)
+   {
+       if(b&1)
+       res=res+a;
+       printf("%d\n",res);
+       printf("%d %d\n",a,b);
+       a=a<<1;
+       b=b>>1;
+       printf("%d %d\n",a,b);
+   }
+printf("%d\n",res);
+    return 0;
+}
+
+Given an unsigned integer N. The task is to swap all odd bits with even bits. For example, if the given number is 23 (00010111), it should be converted to 43(00101011). Here, every even position bit is swapped with adjacent bit on right side(even position bits are highlighted in binary representation of 23), and every odd position bit is swapped with adjacent on left side.
+
+#include<stdio.h>
+int main()
+{
+    int t,n,res,k,p;
+    scanf("%d",&t);
+    while(t)
+    {
+    scanf("%d",&n);
+    //ecxtracting of even bits
+    k=n&170;
+    k=k>>1;
+    p=n&85;
+    p=p<<1;
+    res=k|p;
+    printf("%d",res);
+    t--;
+    }
+    
+    return 0;
+}
