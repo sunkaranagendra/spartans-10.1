@@ -1,0 +1,81 @@
+Factorial:
+#include <stdio.h>
+
+int fact(int n)
+{
+    if(n==0)
+    return 1;
+    else
+    return n*fact(n-1);
+}
+
+int main()
+{
+    //printf("Hello World");
+    int n;
+    scanf("%d",&n);
+    printf("%d",fact(n));
+
+    return 0;
+}
+sum of n natural numbers:
+#include <stdio.h>
+int sum(int n)
+{
+if(n==1)
+return 1;
+else
+return n+sum(n-1);
+}
+
+int main()
+{
+    //printf("Hello World");
+    int n;
+    scanf("%d",&n);
+    printf("%d",sum(n));
+
+    return 0;
+}
+
+multiplication:
+
+#include <stdio.h>
+int multiply(int a,int b)
+{
+    if(b==1)
+    return a;
+    else
+    return  a+multiply(a,b-1);
+}
+int main()
+{
+    //printf("Hello World");
+    int a,b;
+    scanf("%d%d",&a,&b);
+    printf("%d",multiply(a,b));
+
+    return 0;
+}
+
+
+GCD:
+#include <stdio.h>
+int gcd(int a,int b)
+{
+    if(b==0)
+    return a;
+    else
+    return gcd(b,a%b);
+    
+}
+int main()
+{
+    //printf("Hello World");
+    int a,b;
+    scanf("%d%d",&a,&b);
+    printf("%d",gcd(a,b));
+    return 0;
+}
+
+
