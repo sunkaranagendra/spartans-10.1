@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int is_valid(int chess[][10],int total,int row,int col)
+{
+    int i;
+    for(i=0;i<row;i++)
+    {
+        if(chess[i][col])
+        {
+            return 0; // to verify that column have any queens
+            
+        }
+    }
+    int row1=row;
+    int col1=col;
+    while(row1>=0 && col1<total)
+    {
+        if(chess[row1][col1])
+        {
+            return 0;  // to check left diagonal have any occupied queens 
+        }
+        row1--;
+        col1++;
+    }
+    row1=row;
+    col1=col;
+    while(row1>=0 && col1>=0)
+    {
+         if(chess[row1][col1])
+        {
+            return 0;  // to check right diagonal have any occupied queens 
+        }
+        row1--;
+        col1--;
+    }
+    return 1;
+}
+int queen (int chess[][10], int total, int row)
+{
+
+  int col;
+  //base condition check
+
+  if (row == total)
+    {
+
+      return 1;   // if all queens placed then return 1
+    }
+  for (col = 0; col < total; col++)
+    {
+      if (is_valid (chess, total, row, col))
+	{
+	  chess[row][col] = 1;
+	  if (queen (chess, total, row + 1))
+	    {
+	      return 1;
+	    }
+     
+       chess[row][col] = 0; // if that position is not possible to place queen then '0'
+
+	}
+    }
+    return 0;
+
+}
+
+
+int main ()
+{
+  //printf("Hello World");
+  int n, i, j, q;
+  scanf ("%d", &n);
+  int chess[10][10] = {0};
+  q = queen (chess, n, 0);
+  if (q == 1)
+    {
+      printf ("possible solution is \n");
+    }
+  else
+    printf ("not feasible\n");
+
+  for (i = 0; i < n; i++)
+    {
+      for (j = 0; j < n; j++)
+	{
+	  printf ("%d", chess[i][j]);
+	}
+      printf ("\n");
+    }
+
+  return 0;
+}
