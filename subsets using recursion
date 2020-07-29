@@ -1,0 +1,31 @@
+STRING:
+
+def subset(st,index,curr):
+    if index==len(st):
+        print(curr)
+        return
+    subset(st,index+1,curr+st[index])   // considering with next tring 
+    subset(st,index+1,curr)  // considering without next string 
+st=input()
+index=0
+curr=''
+subset(st,index,curr)
+
+NUMBER:
+
+def subset(st,index,curr):
+    print(curr)
+    for i in range(index,len(st)):
+        curr.append(st[i])
+        subset(st,index+1,curr)
+        curr.pop(-1)
+        
+        
+    return
+    
+st=input().split()
+index=0
+curr=[]
+subset(st,index,curr)
+
+
