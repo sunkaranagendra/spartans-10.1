@@ -79,3 +79,61 @@ int main()
 }
 
 
+REVERSE OF A STRING :
+
+def reverse(s):
+    if len(s)==0:
+        return
+    else:
+        l=s.split(" ")
+        print(l[-1],end=' ')
+        l=l[:-1]
+        # print(l)
+        s=' '.join(l)
+        reverse(s)
+s=input()
+reverse(s)
+
+
+
+ Q:A word is considered elﬁsh if it contains the letters: e, l, and f in it, in any order. For example, we would say that the following words are elﬁsh: whiteleaf, tasteful, unfriendly, and waﬄes, because they each contain those letters. • Write a predicate function called elﬁsh? that, given a word, tells us if that word is elﬁsh or not. • Write a more generalized predicate function called x-ish? that, given two words, returns true if all the letters of the ﬁrst word are contained in the second.
+ANS:
+
+def elfish(s):
+    c=0
+    if (('e' in s.lower()) and ('l' in s.lower()) and ('f' in s.lower())):
+        c+=1
+    if(c==1):
+        print("yes it is!")
+        return 
+    else:
+        print("no its not!")
+        return
+def find(i,t):
+    if i in t:
+        return 1
+    else:
+        return 0
+        
+def xish(s,t):
+    # print(s,t)
+    if(len(t)<len(s)):
+        print("not found")
+    c=0
+    for i in s:
+        if(find(i,t)):
+            c+=1
+        else:
+            print("not found")
+            return 0
+    if(c==len(s)):
+        print("found")
+        return 
+    
+        
+    
+s=input()
+t=input()
+elfish(s)
+xish(s,t)
+
