@@ -1,0 +1,48 @@
+#include <stdio.h>
+int func2(int a[],int n,int k)
+{
+    int i;
+     for(i=0;i<n;i++)
+    {
+       
+        if(a[i]==k)
+        return 1;              // search element
+    }
+    return 0;
+}
+
+void func1(int a[],int n)
+{
+    int k;
+    for(k=0;k<n;k++)
+    {
+        if(a[k]<0)
+        { 
+            a[k]=0;        //if element is less than 0 then replace it with 0
+        }
+    }
+     for(k=0;k<n;k++)
+    {
+        printf("%d ",a[k]);
+    }
+    
+}
+int main()
+{
+    //printf("Hello World");
+    int n,i,k;
+    scanf("%d",&n);
+    int a[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&k);
+    func1(a,n);
+    if(func2(a,n,k))
+  {
+    printf("\nfound");
+    }
+
+    return 0;
+}
