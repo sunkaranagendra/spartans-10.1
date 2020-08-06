@@ -1,0 +1,35 @@
+#include <stdio.h>
+void find(int a[],int total,int index,int count,int k)
+{
+    if(index==total)
+    {
+        printf("%d",count);
+    }
+    else
+{
+    if(a[index]==k)
+    {
+     find(a,total,index+1,count+1,k);
+    }
+    else
+    {
+        find(a,total,index+1,count,k);
+    }
+}
+}
+
+int main()
+{
+    //printf("Hello World");
+    int n;
+    scanf("%d",&n);
+    int a[n],i,c=0,index=0,element;
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&element);
+    find(a,n,index,c,element);
+
+    return 0;
+}
