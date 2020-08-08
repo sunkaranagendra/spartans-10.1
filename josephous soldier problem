@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main()
+{
+    //printf("Hello World");
+    int n,t,c=0;
+    scanf("%d",&n);
+    t=n;
+    while(n!=0)
+    {
+
+        n=n/2;
+        c++;
+    }
+    t=t<<1;
+    t=t|1;
+    t=t^(1<<c);
+
+    printf("%d",t);
+
+    return 0;
+}
+
+
+for every consecutive member
