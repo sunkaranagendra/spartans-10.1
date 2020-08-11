@@ -22,4 +22,27 @@ int main()
 }
 
 
-for every consecutive member
+for every consecutive member   k=2
+for k>=2
+#include <stdio.h>
+int josephous(int n,int k)
+{
+    if(n==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return (josephous(n-1,k)+k-1)%n+1;   //n-1 is every time one people is killed and sword is handover to the  person 
+                                            //who is kth from begining
+    }
+}
+
+int main()
+{
+    // printf("Hello World");
+int n,k;
+scanf("%d%d",&n,&k);
+printf(" safe place is %d",josephous(n,k));
+    return 0;
+}
